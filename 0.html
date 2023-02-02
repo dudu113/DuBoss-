@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		body
+		{
+			background-image: url(img/img1.jpg);
+			background-repeat: no-repeat;
+			background-size: 100% 260px;
+			background-color: rgba(240, 248, 255, 0.98);
+		}
+		#div01{
+			width:70%;
+			margin: auto;
+			margin-top: 120px;
+			background-color: white;
+			height: 1200px;
+		}
+		#div02{
+			width: 200px;
+			height: 200px;
+			border: 1px solid;
+			position: fixed;
+			right: 20px;
+			bottom: 20px;
+		}
+		#div03{
+			width: 50px;
+			height:50px;
+			border: 1px solid;
+			position: fixed;
+			left: 20px;
+			top: 20px;
+			z-index: 2;/*层（级别）*/
+		}
+	</style>
+	<body>
+		<div id="div01">
+			<center>
+				字体
+				<!--select为下拉框-->
+				<select id="se01"onchange="fun01()">
+					<option>楷体</option>
+					<option>宋体</option>
+					<option>仿宋</option>
+					<option>黑体</option>
+				</select>
+				大小：
+				<select id="se02"onchange="fun02()">
+					<option>10px</option>
+					<option>15px</option>
+					<option>18px</option>
+					<option>20px</option>
+				</select>
+				背景颜色：
+				<input type="color" id="co" onchange="fun03()"/>
+				字体间隔：
+				<select id="se04" onchange="fun04()">
+					<option>5px</option>
+					<option>8px</option>
+					<option>10px</option>
+					<option>15px</option>
+					<option>18px</option>
+					<option>22px</option>
+				</select>
+			</center>
+			<br>
+			<center id="cen">
+				<!--h1一级标题-->
+				<h1>悯农</h1>
+				<br>
+				<!--p为加粗-->
+				<p>锄禾日当午</p>
+				<p>浩佳禾下土</p>
+				<p>谁知每亩佳</p>
+				<p>人人皆辛苦</p>
+			</center>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	function fun01()
+	{
+		var se01=document.getElementById("se01");
+		var cen=document.getElementById("cen");
+		cen.style.fontFamily=se01.value;
+	}
+	function fun02()
+	{
+		var se02=document.getElementById("se02");
+		var cen=document.getElementById("cen");
+		cen.style.fontSize=se02.value;
+	}
+	function fun03()
+	{
+		var co=document.getElementById("co");
+		var div01=document.getElementById("div01");
+		div01.style.backgroundColor=co.value;
+	}
+	function fun04()
+	{
+		var cen=document.getElementById("cen");
+		var sel=document.getElementById("se04");
+		cen.style.letterSpacing=sel.value;
+	}
+</script>
+
